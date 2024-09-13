@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragonball Personajes Evaluación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="search">
+        <form class="dragonball-character">
+            <div class="container-search">
+                <label>
+                    <h1>Dragonball Personajes Evaluación</h1>
+                </label>
+                <label>
+                    <p>Buscar un personaje por nombre</p>
+                </label>
+                <input id="search-character" type="text" placeholder="Search for a character">
+            </div>
+        </form>
+    </div>
+
+    <div class="character-list">
+        <ul>
+            <li id="show-characters">Mostrar personajes</li>
+            <li id="find-gohan">Encontrar a Gohan</li>
+            <li id="filter-saiyans">Filtrar Saiyayines</li>
+            <li id="filter-androids">Filtrar Androides</li>
+            <li id="lowest-power">Menor poder de todos</li>
+            <li id="highest-power">Mayor poder de todos</li>
+            <li id="position-vegeta">Posición de Vegeta</li>
+            <li id="female-characters">Personajes femeninos</li>
+            <li id="total-power">Total poder de todos personajes</li>
+        </ul>
+    </div>
+
+    <div id="container" class="container"></div>
+
+    <script src="db.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
