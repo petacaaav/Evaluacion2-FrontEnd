@@ -7,6 +7,23 @@ document.getElementById("highest-power").addEventListener("click", mayorPoder);
 document.getElementById("total-power").addEventListener("click", totalPoder);
 document.getElementById("position-vegeta").addEventListener("click", posicionVegeta);
 
+// Añadir el event listener para la barra de búsqueda
+document.getElementById("search-character").addEventListener("input", buscarPersonaje);
+
+function mostrarTodos() {
+    let container = document.getElementById("container");
+    container.innerHTML = ""; 
+    personajes.forEach(personaje => {
+        container.innerHTML += mostrarPersonaje(personaje);
+    });
+}
+
+function buscarPersonaje() {
+    const input = document.getElementById("search-character").value.toLowerCase();
+    const filteredPersonajes = personajes.filter(personaje => personaje.name.toLowerCase().includes(input));
+    mostrarFiltro(filteredPersonajes);
+}
+
 function mostrarTodos() {
     let container = document.getElementById("container");
     container.innerHTML = ""; 
