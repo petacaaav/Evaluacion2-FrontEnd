@@ -45,7 +45,7 @@ body {
 
 .character-profile img {
     width: 100%;
-    max-width: 100px; /* Ajusta el tamaño máximo aquí */
+    max-width: 100px; 
     height: auto;
 }
 

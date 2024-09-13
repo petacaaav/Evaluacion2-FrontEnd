@@ -6,8 +6,7 @@ document.getElementById("lowest-power").addEventListener("click", menorPoder);
 document.getElementById("highest-power").addEventListener("click", mayorPoder);
 document.getElementById("total-power").addEventListener("click", totalPoder);
 document.getElementById("position-vegeta").addEventListener("click", posicionVegeta);
-
-// Añadir el event listener para la barra de búsqueda
+document.getElementById("female-characters").addEventListener("click", filtrarFemeninos);
 document.getElementById("search-character").addEventListener("input", buscarPersonaje);
 
 function mostrarTodos() {
@@ -76,27 +75,30 @@ function mostrarFiltro(filteredCharacters) {
     });
 }
 
-// Menor poder
 function menorPoder() {
     let minPoder = personajes.reduce((min, personaje) => personaje.attack < min ? personaje.attack : min, personajes[0].attack);
     let personajeMenorPoder = personajes.find(personaje => personaje.attack === minPoder);
     mostrarFiltro([personajeMenorPoder]);
 }
 
-// Mayor poder
 function mayorPoder() {
     let maxPoder = personajes.reduce((max, personaje) => personaje.attack > max ? personaje.attack : max, personajes[0].attack);
     let personajeMayorPoder = personajes.find(personaje => personaje.attack === maxPoder);
     mostrarFiltro([personajeMayorPoder]);
 }
 
-// Posición de Vegeta (alerta)
 function posicionVegeta() {
     let vegetaIndex = personajes.findIndex(personaje => personaje.name === "Vegeta");
     alert(`La posición de Vegeta es: ${vegetaIndex + 1}`);
 }
 
-// Suma del poder total de todos los personajes (alerta)
+document.getElementById("female-characters").addEventListener("click", filtrarFemeninos);
+
+function filtrarFemeninos() {
+    let femeninos = personajes.filter(personaje => personaje.gender === "Female");
+    mostrarFiltro(femeninos);
+}
+
 function totalPoder() {
     let total = personajes.reduce((sum, personaje) => sum + personaje.attack, 0);
     alert(`El poder total de todos los personajes es: ${total}`);
